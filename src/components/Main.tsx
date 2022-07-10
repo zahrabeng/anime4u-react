@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 interface Iprops {
   setAllData: React.Dispatch<React.SetStateAction<allData[]>>;
-  setNextPage: React.Dispatch<React.SetStateAction<boolean | undefined>>;
+  setNextPage: React.Dispatch<React.SetStateAction<boolean>>;
   data: allData[];
 }
 
