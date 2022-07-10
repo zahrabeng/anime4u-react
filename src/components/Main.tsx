@@ -23,6 +23,7 @@ export default function Main(props: Iprops): JSX.Element {
       props.setAllData(jsonBody.data);
       props.setNextPage(jsonBody.pagination.has_next_page);
     }
+    window. scrollTo(0, 0)
     getAllData();
   }, [props.pageNumber]); 
 
