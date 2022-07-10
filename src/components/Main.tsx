@@ -1,14 +1,14 @@
 //import axios from "axios";
 import allData from "./Interfaces";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
-interface Iprops{
-    setter: React.Dispatch<React.SetStateAction<allData[]>>
-    data: allData[]
+interface Iprops {
+  setter: React.Dispatch<React.SetStateAction<allData[]>>;
+  data: allData[];
 }
 
 export default function Main(props: Iprops): JSX.Element {
-  const [pageRefresh, setPageRefresh] = useState<boolean>(false);
+  //   const [pageRefresh, setPageRefresh] = useState<boolean>(false);
 
   const jikanAPI = "https://api.jikan.moe/v4/anime?q="; //?q= added to the end of the API to query
 
@@ -23,11 +23,5 @@ export default function Main(props: Iprops): JSX.Element {
     getAllData();
   }, []);
 
-//   console.log(pageData);
-
-  return (
-    <>
-      {props.data.map((data:allData) => <img src={data.images.jpg.image_url} key={data.mal_id}></img>)}
-    </>
-  );
+  return <></>;
 }
