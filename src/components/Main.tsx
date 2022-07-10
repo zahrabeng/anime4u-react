@@ -12,8 +12,6 @@ interface Iprops {
 export default function Main(props: Iprops): JSX.Element {
   const jikanAPI = "https://api.jikan.moe/v4/anime?q="; //?q= added to the end of the API to query
 
-
-
   useEffect(() => {
     async function getAllData() {
       const result = await fetch(
@@ -23,9 +21,9 @@ export default function Main(props: Iprops): JSX.Element {
       props.setAllData(jsonBody.data);
       props.setNextPage(jsonBody.pagination.has_next_page);
     }
-    window. scrollTo(0, 0)
+    window.scrollTo(0, 0);
     getAllData();
-  }, [props.pageNumber]); 
+  }, [props.pageNumber]);
 
   return <></>;
 }

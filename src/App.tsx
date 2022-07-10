@@ -16,7 +16,7 @@ function App(): JSX.Element {
         data={pageData}
         setAllData={setPageData}
         setNextPage={setHasNextPage}
-        pageNumber ={pageNumber}
+        pageNumber={pageNumber}
       />
       <Grid data={pageData} />
       <PageButtons

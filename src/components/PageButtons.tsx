@@ -15,6 +15,7 @@ export default function PageButtons(props: Iprops): JSX.Element {
 
   return (
     <>
+      <p>Page {props.pageNumber}</p>
       {props.hasNextPage && (
         <button onClick={() => handleNextPageClick()}>Next Page</button>
       )}
