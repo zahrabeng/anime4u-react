@@ -1,6 +1,6 @@
 interface Iprops {
-  hasNextPage: boolean;
   setPageNumber: React.Dispatch<React.SetStateAction<number>>;
+  hasNextPage: boolean;
   pageNumber: number;
 }
 
@@ -13,9 +13,17 @@ export default function PageButtons(props: Iprops): JSX.Element {
     }
   }
 
+  function handlePreviousPageClick() {
+    props.setPageNumber((prev) => prev - 1);
+  }
+
   return (
     <>
       <p>Page {props.pageNumber}</p>
+
+      {props.pageNumber !== 1 && (
+        <button onClick={() => handlePreviousPageClick()}>Previous Page</button>
+      )}
       {props.hasNextPage && (
         <button onClick={() => handleNextPageClick()}>Next Page</button>
       )}
