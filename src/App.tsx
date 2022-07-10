@@ -8,8 +8,8 @@ import PageButtons from "./components/PageButtons";
 function App(): JSX.Element {
   const [pageData, setPageData] = useState<allData[]>([]);
   const [hasNextPage, setHasNextPage] = useState<boolean>(false);
-
-
+  const [pageNumber, setPageNumber] = useState<number>(1);
+ 
   return (
     <>
       <Main
@@ -18,7 +18,7 @@ function App(): JSX.Element {
         setNextPage={setHasNextPage}
       />
       <Grid data={pageData} />
-      <PageButtons hasNextPage ={hasNextPage}/>
+      <PageButtons hasNextPage={hasNextPage} setPageNumber = {setPageNumber} pageNumber={pageNumber}/>
     </>
   );
 }
