@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import allData from "./Interfaces";
+
 
 interface Iprops {
   data: allData[];
@@ -6,8 +8,11 @@ interface Iprops {
 }
 
 export default function Grid(props: Iprops): JSX.Element {
+const navigate = useNavigate();
+
   function handleCardClick(id: number) {
     props.setCardId(id);
+    navigate(`/card/${id}`);
   }
 
   return (

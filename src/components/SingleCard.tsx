@@ -1,7 +1,12 @@
-export default function SingleCard() {
+interface Iprops{
+    cardId:number;
+}
+
+export default function SingleCard(props:Iprops):JSX.Element {
+    
   return (
     <>
-      <p>Hello world</p>
+      <p>Hello world {props.cardId}</p>
     </>
   );
 }
