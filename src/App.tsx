@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import allData from "./components/Interfaces";
 import Main from "./components/Main";
@@ -13,18 +14,30 @@ function App(): JSX.Element {
 
   return (
     <>
-      <Main
-        data={pageData}
-        setAllData={setPageData}
-        setNextPage={setHasNextPage}
-        pageNumber={pageNumber}
-      />
-      <Grid data={pageData} setCardId={setCardId} />
-      <PageButtons
-        hasNextPage={hasNextPage}
-        setPageNumber={setPageNumber}
-        pageNumber={pageNumber}
-      />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Main
+                  data={pageData}
+                  setAllData={setPageData}
+                  setNextPage={setHasNextPage}
+                  pageNumber={pageNumber}
+                />
+                <Grid data={pageData} setCardId={setCardId} />
+                <PageButtons
+                  hasNextPage={hasNextPage}
+                  setPageNumber={setPageNumber}
+                  pageNumber={pageNumber}
+                />
+              </>
+            }
+          ></Route>
+          
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
