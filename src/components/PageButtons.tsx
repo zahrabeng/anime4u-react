@@ -5,5 +5,17 @@ interface Iprops {
 }
 
 export default function PageButtons(props: Iprops): JSX.Element {
-  return <></>;
+  function handleNextPageClick() {
+    if (props.hasNextPage) {
+      props.setPageNumber((prev) => prev + 1);
+    } else {
+      props.setPageNumber(1);
+    }
+  }
+
+  return (
+    <>
+     {props.hasNextPage && <button onClick={() => handleNextPageClick()}>Next Page</button>}
+    </>
+  );
 }
