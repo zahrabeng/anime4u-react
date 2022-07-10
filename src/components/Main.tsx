@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 
 interface Iprops {
   setAllData: React.Dispatch<React.SetStateAction<allData[]>>;
+  setNextPage: React.Dispatch<React.SetStateAction<boolean | undefined>>;
   data: allData[];
 }
 
 export default function Main(props: Iprops): JSX.Element {
-   const [hasNextPage, sethasNextPage] = useState<boolean>();
 
   const jikanAPI = "https://api.jikan.moe/v4/anime?q="; //?q= added to the end of the API to query
 
@@ -19,7 +19,7 @@ export default function Main(props: Iprops): JSX.Element {
       );
       const jsonBody = await result.json();
       props.setAllData(jsonBody.data);
-      sethasNextPage(jsonBody.pagination.has_next_page)
+      props.setNextPage(jsonBody.pagination.has_next_page)
      
     }
     getAllData();

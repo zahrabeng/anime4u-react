@@ -6,11 +6,11 @@ import Grid from "./components/Grid";
 
 function App(): JSX.Element {
   const [pageData, setPageData] = useState<allData[]>([]);
-  const [pageNumber, setPageNumber] = useState()
+  const [hasNextPage, setHasNextPage] = useState<boolean>();
 
   return (
     <>
-      <Main setAllData={setPageData} data={pageData} />
+      <Main data={pageData} setAllData={setPageData} setNextPage = {setHasNextPage}/>
       <Grid data={pageData} />
     </>
   );
