@@ -1,9 +1,8 @@
-interface Iprops{
-    cardId:number;
+interface Iprops {
+  cardId: number;
 }
 
-export default function SingleCard(props:Iprops):JSX.Element {
-    
+export default function SingleCard(props: Iprops): JSX.Element {
   return (
     <>
       <p>Hello world {props.cardId}</p>

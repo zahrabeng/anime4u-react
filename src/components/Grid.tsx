@@ -1,14 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import allData from "./Interfaces";
 
-
 interface Iprops {
   data: allData[];
   setCardId: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export default function Grid(props: Iprops): JSX.Element {
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
   function handleCardClick(id: number) {
     props.setCardId(id);

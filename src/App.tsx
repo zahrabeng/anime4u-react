@@ -13,7 +13,7 @@ function App(): JSX.Element {
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [cardId, setCardId] = useState<number>(0);
 
-  console.log(cardId)
+  console.log(cardId);
   return (
     <>
       <Router>
@@ -28,7 +28,7 @@ function App(): JSX.Element {
                   setNextPage={setHasNextPage}
                   pageNumber={pageNumber}
                 />
-                <Grid data={pageData} setCardId={setCardId}  />
+                <Grid data={pageData} setCardId={setCardId} />
                 <PageButtons
                   hasNextPage={hasNextPage}
                   setPageNumber={setPageNumber}
@@ -38,9 +38,10 @@ function App(): JSX.Element {
             }
           />
 
-
-          <Route path={`/card/${cardId}`} element={<SingleCard cardId = {cardId} />} />
-
+          <Route
+            path={`/card/${cardId}`}
+            element={<SingleCard cardId={cardId} />}
+          />
         </Routes>
       </Router>
     </>
