@@ -23,7 +23,7 @@ function App(): JSX.Element {
             path="/"
             element={
               <>
-              <Header/>
+                <Header />
                 <Main
                   data={pageData}
                   setAllData={setPageData}
