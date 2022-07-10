@@ -6,6 +6,7 @@ import Main from "./components/Main";
 import Grid from "./components/Grid";
 import PageButtons from "./components/PageButtons";
 import SingleCard from "./components/SingleCard";
+import Header from "./components/Header";
 
 function App(): JSX.Element {
   const [pageData, setPageData] = useState<allData[]>([]);
@@ -22,6 +23,7 @@ function App(): JSX.Element {
             path="/"
             element={
               <>
+              <Header/>
                 <Main
                   data={pageData}
                   setAllData={setPageData}
