@@ -2,13 +2,19 @@ import allData from "./Interfaces";
 
 interface Iprops {
   data: allData[];
+  setCardId: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export default function Grid(props: Iprops): JSX.Element {
+
+  function handleCardClick(id:number){
+    props.setCardId(id)
+  }
+
   return (
     <>
       {props.data.map((data: allData) => (
-        <div key={data.mal_id} className="anime-card">
+        <div key={data.mal_id} className="anime-card" onClick={() => handleCardClick(data.mal_id)}> 
           <img
             src={data.images.jpg.image_url}
             alt="anime cover"

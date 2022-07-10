@@ -9,7 +9,9 @@ function App(): JSX.Element {
   const [pageData, setPageData] = useState<allData[]>([]);
   const [hasNextPage, setHasNextPage] = useState<boolean>(false);
   const [pageNumber, setPageNumber] = useState<number>(1);
+  const [cardId, setCardId] = useState<number>(0); 
 
+ 
   return (
     <>
       <Main
@@ -18,7 +20,7 @@ function App(): JSX.Element {
         setNextPage={setHasNextPage}
         pageNumber={pageNumber}
       />
-      <Grid data={pageData} />
+      <Grid data={pageData} setCardId = {setCardId}/>
       <PageButtons
         hasNextPage={hasNextPage}
         setPageNumber={setPageNumber}
