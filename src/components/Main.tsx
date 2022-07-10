@@ -1,6 +1,6 @@
 //import axios from "axios";
 import allData from "./Interfaces";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 interface Iprops {
   setAllData: React.Dispatch<React.SetStateAction<allData[]>>;
