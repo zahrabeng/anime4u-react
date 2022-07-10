@@ -9,7 +9,6 @@ interface Iprops {
 }
 
 export default function Main(props: Iprops): JSX.Element {
-
   const jikanAPI = "https://api.jikan.moe/v4/anime?q="; //?q= added to the end of the API to query
 
   useEffect(() => {
@@ -19,12 +18,10 @@ export default function Main(props: Iprops): JSX.Element {
       );
       const jsonBody = await result.json();
       props.setAllData(jsonBody.data);
-      props.setNextPage(jsonBody.pagination.has_next_page)
-     
+      props.setNextPage(jsonBody.pagination.has_next_page);
     }
     getAllData();
   }, []);
-
 
   return <></>;
 }

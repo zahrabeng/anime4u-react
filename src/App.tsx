@@ -10,7 +10,11 @@ function App(): JSX.Element {
 
   return (
     <>
-      <Main data={pageData} setAllData={setPageData} setNextPage = {setHasNextPage}/>
+      <Main
+        data={pageData}
+        setAllData={setPageData}
+        setNextPage={setHasNextPage}
+      />
       <Grid data={pageData} />
     </>
   );
