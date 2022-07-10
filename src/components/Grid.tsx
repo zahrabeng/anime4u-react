@@ -8,7 +8,7 @@ export default function Grid(props: Iprops): JSX.Element {
   return (
     <>
       {props.data.map((data: allData) => (
-        <div key={data.mal_id}>
+        <div key={data.mal_id} className="anime-card">
           <img
             src={data.images.jpg.image_url}
             alt="anime cover"
