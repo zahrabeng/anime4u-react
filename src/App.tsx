@@ -15,6 +15,7 @@ function App(): JSX.Element {
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [cardId, setCardId] = useState<number>(0);
   const [searchText, setSearchText] = useState<string>("");
+  const [searchButtonToggle, setSearchButtonToggle] =  useState<boolean>(false)
 
   console.log(cardId);
   console.log(searchText);
@@ -28,13 +29,15 @@ function App(): JSX.Element {
             element={
               <>
                 <Header />
-                <Searchbar setSearchText={setSearchText} />
+                <Searchbar setSearchText={setSearchText} searchText = {searchText} setSearchButtonToggle={setSearchButtonToggle}/>
                 <Main
                   data={pageData}
                   setAllData={setPageData}
                   setNextPage={setHasNextPage}
                   pageNumber={pageNumber}
                   searchText = {searchText}
+                  setSearchText = {setSearchText}
+                  searchButtonToggle = {searchButtonToggle}
                 />
                 <Grid data={pageData} setCardId={setCardId} />
                 <PageButtons
