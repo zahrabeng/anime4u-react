@@ -23,7 +23,13 @@ export default function SingleCard(props: Iprops): JSX.Element {
       <div>
         <p>Type: {singleData?.type}</p>
         <p>Episodes: {singleData?.episodes}</p>
-        <p>Genre: {singleData?.genres.map((obj) => ` ✨${obj.name}`)}</p>
+        <p>
+          Genre:{" "}
+          {singleData?.genres.length !== 0
+            ? singleData?.genres.map((obj) => ` ✨${obj.name}`)
+            : "N/A"}
+        </p>
+        <p>Rating: {singleData?.rating}</p>
       </div>
     </>
   );
