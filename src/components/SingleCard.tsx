@@ -8,6 +8,9 @@ interface Iprops {
 
 export default function SingleCard(props: Iprops): JSX.Element {
   const navigate = useNavigate();
+
+  const singleData = props.allData.find((eachObj) => eachObj.mal_id === props.cardId)
+  
   return (
     <>
       <button onClick={() => navigate(-1)}>Back</button>
