@@ -16,10 +16,19 @@ export default function SingleCard(props: Iprops): JSX.Element {
   return (
     <>
       <button onClick={() => navigate(-1)}>Back</button>
-      <h1>{singleData?.title}</h1>
-      <h2>{singleData?.title_japanese}</h2>
-      <img src={singleData?.images.jpg.image_url}></img>
-      <p>{singleData?.synopsis}</p>
+      <div className="card-titles">
+        <h1>{singleData?.title}</h1>
+        <h2>{singleData?.title_japanese}</h2>
+      </div>
+      <a href={singleData?.url} target="_blank" rel="noreferrer">
+        <img src={singleData?.images.jpg.image_url}></img>
+      </a>
+      <p>
+        Ranked #{singleData?.rank} Popularity #{singleData?.popularity}
+      </p>
+      <p>
+        Synopsis: {singleData?.synopsis !== null ? singleData?.synopsis : "N/A"}
+      </p>
       <div>
         <p>Type: {singleData?.type}</p>
         <p>Episodes: {singleData?.episodes}</p>
@@ -30,6 +39,8 @@ export default function SingleCard(props: Iprops): JSX.Element {
             : "N/A"}
         </p>
         <p>Rating: {singleData?.rating}</p>
+        <p>Status: {singleData?.status}</p>
+        <p>Aired: {singleData?.aired.string}</p>
       </div>
     </>
   );
