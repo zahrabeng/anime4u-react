@@ -7,6 +7,7 @@ import Grid from "./components/Grid";
 import PageButtons from "./components/PageButtons";
 import SingleCard from "./components/SingleCard";
 import Header from "./components/Header";
+import Searchbar from "./components/Searchbar";
 
 function App(): JSX.Element {
   const [pageData, setPageData] = useState<allData[]>([]);
@@ -24,6 +25,7 @@ function App(): JSX.Element {
             element={
               <>
                 <Header />
+                <Searchbar/> 
                 <Main
                   data={pageData}
                   setAllData={setPageData}
