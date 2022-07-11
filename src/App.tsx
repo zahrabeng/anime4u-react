@@ -42,7 +42,7 @@ function App(): JSX.Element {
 
           <Route
             path={`/card/${cardId}`}
-            element={<SingleCard cardId={cardId} />}
+            element={<SingleCard cardId={cardId} allData={pageData}/>}
           />
         </Routes>
       </Router>
