@@ -32,6 +32,7 @@ export default function SingleCard(props: Iprops): JSX.Element {
       <div>
         <p>Type: {singleData?.type}</p>
         <p>Episodes: {singleData?.episodes}</p>
+        <p>Duration: {singleData?.duration}</p>
         <p>
           Genre:{" "}
           {singleData?.genres.length !== 0
