@@ -9,15 +9,16 @@ interface Iprops {
 export default function Searchbar(props: Iprops): JSX.Element {
   // const [searchText, setSearchText] = useState<string>("");
 
-  
   return (
     <>
       <input
         onChange={(e) => props.setSearchText(e.target.value)}
         placeholder="Search an Anime..."
-        value={props.searchText}  
+        value={props.searchText}
       ></input>
-      <button onClick={()=> props.setSearchButtonToggle((prev) => !prev)}>Search</button>
+      <button onClick={() => props.setSearchButtonToggle((prev) => !prev)}>
+        Search
+      </button>
     </>
   );
 }
