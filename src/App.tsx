@@ -14,8 +14,11 @@ function App(): JSX.Element {
   const [hasNextPage, setHasNextPage] = useState<boolean>(false);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [cardId, setCardId] = useState<number>(0);
+  const [searchText, setSearchText] = useState<string>("");
 
   console.log(cardId);
+  console.log(searchText);
+
   return (
     <>
       <Router>
@@ -25,7 +28,7 @@ function App(): JSX.Element {
             element={
               <>
                 <Header />
-                <Searchbar/> 
+                <Searchbar allData={pageData} setSearchText={setSearchText} />
                 <Main
                   data={pageData}
                   setAllData={setPageData}
