@@ -10,7 +10,7 @@ import Header from "./components/Header";
 import Searchbar from "./components/Searchbar";
 
 function App(): JSX.Element {
-  const [pageData, setPageData] = useState<allData[]>([]);
+  const [pageData, setPageData] = useState<allData[] | []>([]);
   const [hasNextPage, setHasNextPage] = useState<boolean>(false);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [cardId, setCardId] = useState<number>(0);
@@ -28,12 +28,13 @@ function App(): JSX.Element {
             element={
               <>
                 <Header />
-                <Searchbar allData={pageData} setSearchText={setSearchText} />
+                <Searchbar setSearchText={setSearchText} />
                 <Main
                   data={pageData}
                   setAllData={setPageData}
                   setNextPage={setHasNextPage}
                   pageNumber={pageNumber}
+                  searchText = {searchText}
                 />
                 <Grid data={pageData} setCardId={setCardId} />
                 <PageButtons

@@ -16,7 +16,7 @@ export default function Grid(props: Iprops): JSX.Element {
 
   return (
     <>
-      {props.data.map((data: allData) => (
+      {props.data.length > 0 && props.data.map((data: allData) => (
         <div
           key={data.mal_id}
           className="anime-card"
