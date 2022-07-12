@@ -17,7 +17,7 @@ function App(): JSX.Element {
   const [cardId, setCardId] = useState<number>(0);
   const [searchText, setSearchText] = useState<string>("");
   const [searchButtonToggle, setSearchButtonToggle] = useState<boolean>(false);
-  const [orderBy, setOrderBy] = useState<string>("title")
+  const [orderBy, setOrderBy] = useState<string>("popularity")
 
   console.log(cardId);
   console.log(searchText);
@@ -46,6 +46,7 @@ function App(): JSX.Element {
                   searchText={searchText}
                   setSearchText={setSearchText}
                   searchButtonToggle={searchButtonToggle}
+                  orderBy = {orderBy}
                 />
                 <Grid data={pageData} setCardId={setCardId} />
                 <PageButtons

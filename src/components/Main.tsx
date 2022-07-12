@@ -10,6 +10,7 @@ interface Iprops {
   pageNumber: number;
   searchText: string;
   searchButtonToggle: boolean;
+  orderBy:string;
 }
 
 export default function Main(props: Iprops): JSX.Element {
@@ -25,7 +26,7 @@ export default function Main(props: Iprops): JSX.Element {
   useEffect(() => {
     async function getAllData() {
       const result = await fetch(
-        `${jikanAPI}&order_by=popularity&sort=desc&page=${props.pageNumber}&rating=g`
+        `${jikanAPI}&order_by=${props.orderBy}&sort=desc&page=${props.pageNumber}&rating=g`
       );
       const jsonBody = await result.json();
       props.setAllData(filterBySearch(jsonBody.data));
@@ -34,7 +35,7 @@ export default function Main(props: Iprops): JSX.Element {
     window.scrollTo(0, 0);
     getAllData();
     props.setSearchText("");
-  }, [props.pageNumber, props.searchButtonToggle]);
+  }, [props.pageNumber, props.searchButtonToggle, props.orderBy]);
 
   return <></>;
 }
