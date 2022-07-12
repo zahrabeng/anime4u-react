@@ -1,7 +1,7 @@
 export default function Header(): JSX.Element {
   return (
     <>
-      <h1>Anime-4U</h1>
+      <h1 className="website-title">Anime-4U</h1>
     </>
   );
 }
