@@ -8,6 +8,7 @@ import PageButtons from "./components/PageButtons";
 import SingleCard from "./components/SingleCard";
 import Header from "./components/Header";
 import Searchbar from "./components/Searchbar";
+import OrderBy from "./components/OrderBy";
 
 function App(): JSX.Element {
   const [pageData, setPageData] = useState<allData[] | []>([]);
@@ -34,6 +35,7 @@ function App(): JSX.Element {
                   searchText={searchText}
                   setSearchButtonToggle={setSearchButtonToggle}
                 />
+                <OrderBy/>
                 <Main
                   data={pageData}
                   setAllData={setPageData}
