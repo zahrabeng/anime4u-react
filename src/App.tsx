@@ -17,9 +17,11 @@ function App(): JSX.Element {
   const [cardId, setCardId] = useState<number>(0);
   const [searchText, setSearchText] = useState<string>("");
   const [searchButtonToggle, setSearchButtonToggle] = useState<boolean>(false);
+  const [orderBy, setOrderBy] = useState<string>("title")
 
   console.log(cardId);
   console.log(searchText);
+  console.log(orderBy)
 
   return (
     <>
@@ -35,7 +37,7 @@ function App(): JSX.Element {
                   searchText={searchText}
                   setSearchButtonToggle={setSearchButtonToggle}
                 />
-                <OrderBy/>
+                <OrderBy setOrderBy={setOrderBy}/>
                 <Main
                   data={pageData}
                   setAllData={setPageData}
